@@ -16,7 +16,7 @@ Here is how you can easily get started using the ChatBot
 git clone https://github.com/banjtheman/aws_well_arch_chatbot.git
 cd aws_well_arch_chatbot
 pip install -r requirements.txt
-export OPEN_AI_KEY-YOUR_KEY
+export OPEN_AI_KEY=YOUR_KEY
 streamlit run aws_well_arch_st.py
 # View at localhost:8501
 ```

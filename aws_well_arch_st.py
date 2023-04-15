@@ -99,7 +99,7 @@ def main() -> None:
     # Start the streamlit app
     st.title("AWS Well-Architected Chatbot")
     st.subheader("Ask and Learn")
-    st.warning("This is a prototype application, do not enter in confidential information, You can use the official [AWS Well-Architected Tool](https://aws.amazon.com/well-architected-tool/) for best practices ")
+    st.warning("This is a prototype application, do not enter in confidential information.")
     
     app()
 

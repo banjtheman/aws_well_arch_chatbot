@@ -104,15 +104,15 @@ def get_answer_from_chatgpt(
     #         print(prompt)
 
     response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
+        model="gpt-4",
         messages=[
             {
                 "role": "system",
-                "content": "You are an AWS Certified Solutions Architect. Your role is to help customers understand best practices on building on AWS. Return your response in markdown, so you can bold and highlight important steps for customers.",
+                "content": "You are an AWS Certified Solutions Architect. Your role is to help customers understand best practices on building on AWS. Return your response in markdown, so you can bold and highlight important steps for customers. If the answer cannot be found within the  contexnt, write 'I could not find an answer'",
             },
             {
                 "role": "system",
-                "content": f"Use the following context from the AWS Well-Architected Framework to answer the user's query.\nContext:\n{context}",
+                "content": f"Use the following context from the AWS Well-Architected Framework to answer the user's query .\nContext:\n{context}",
             },
             {"role": "user", "content": f"{query}"},
         ],

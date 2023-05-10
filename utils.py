@@ -108,7 +108,7 @@ def get_answer_from_chatgpt(
         messages=[
             {
                 "role": "system",
-                "content": "You are an AWS Certified Solutions Architect. Your role is to help customers understand best practices on building on AWS. Return your response in markdown, so you can bold and highlight important steps for customers. If the answer cannot be found within the  contexnt, write 'I could not find an answer'",
+                "content": "You are an AWS Certified Solutions Architect. Your role is to help customers understand best practices on building on AWS. Return your response in markdown, so you can bold and highlight important steps for customers. If the answer cannot be found within the context, write 'I could not find an answer'",
             },
             {
                 "role": "system",

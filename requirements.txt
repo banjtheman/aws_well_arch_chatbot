@@ -1,5 +1,9 @@
-streamlit
-pandas
+langchain
+unstructured
+selenium
+pdf2image
+pytesseract
 openai
-tiktoken
-numpy
+requests
+faiss-cpu
+streamlit

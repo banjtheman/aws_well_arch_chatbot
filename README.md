@@ -6,7 +6,7 @@ This repo provides the code to stand up your own Chatbot that can awnser questio
 
 **NOTE:** You must have your own [OpenAI API Key](https://platform.openai.com/account/api-keys) to use the Chatbot
 
-If your interested in how this was built, checkout the blog post [here](https://www.buildon.aws/posts/well-arch-chatbot).
+If your interested in how this was built, checkout the blog post [here](https://dev.to/aws/building-an-aws-well-architected-chatbot-with-langchain-13cd).
 
 ## QuickStart
 

@@ -14,50 +14,6 @@ import openai
 openai.api_key = os.environ["OPENAI_API_KEY"]
 
 
-# def message_func(text, is_user=False):
-#     """
-#     This function is used to display the messages in the chatbot UI.
-
-#     Parameters:
-#     text (str): The text to be displayed.
-#     is_user (bool): Whether the message is from the user or the chatbot.
-#     key (str): The key to be used for the message.
-#     avatar_style (str): The style of the avatar to be used.
-#     """
-#     if is_user:
-#         avatar_url = "https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairSides&accessoriesType=Blank&hairColor=BrownDark&facialHairType=BeardMedium&facialHairColor=BrownDark&clotheType=BlazerSweater&eyeType=Default&eyebrowType=FlatNatural&mouthType=Default&skinColor=Black"
-#         message_alignment = "flex-end"
-#         message_bg_color = "linear-gradient(135deg, #00B2FF 0%, #006AFF 100%)"
-#         avatar_class = "user-avatar"
-#         st.write(
-#             f"""
-#                 <div style="display: flex; align-items: center; margin-bottom: 10px; justify-content: {message_alignment};">
-#                     <div style="background: {message_bg_color}; color: white; border-radius: 20px; padding: 10px; margin-right: 5px; max-width: 75%;">
-#                         {text}
-#                     </div>
-#                             <img src="{avatar_url}" class="{avatar_class}" alt="avatar" height="50px" />
-
-#                 </div>
-#                 """,
-#             unsafe_allow_html=True,
-#         )
-#     else:
-#         avatar_url = "https://avataaars.io/?avatarStyle=Transparent&topType=LongHairBigHair&accessoriesType=Prescription01&hairColor=Platinum&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Red&graphicType=Bear&eyeType=Default&eyebrowType=RaisedExcited&mouthType=Smile&skinColor=Brown'"
-#         message_alignment = "flex-start"
-#         message_bg_color = "#71797E"
-#         avatar_class = "bot-avatar"
-#         st.write(
-#             f"""
-#                 <div style="display: flex; align-items: center; margin-bottom: 10px; justify-content: {message_alignment};">
-#                     <img src="{avatar_url}" class="{avatar_class}" alt="avatar" height="50px" />
-#                     <div style="background: {message_bg_color}; color: white; border-radius: 20px; padding: 10px; margin-right: 5px; max-width: 75%;">
-#                         {text} \n </div>
-#                 </div>
-#                 """,
-#             unsafe_allow_html=True,
-#         )
-
-
 if "chat_history" not in st.session_state:
     st.session_state["chat_history"] = []
 
@@ -133,27 +89,14 @@ def app() -> None:
 
             with st.chat_message("AWS bot", avatar="🤖"):
                 st.write(chat[1])
-            # message_func(chat[0], True)
-            # message_func(chat[1], False)
 
             with st.expander("Resources"):
                 for doc in st.session_state["docs"][index]:
                     st.write(doc.metadata["source"])
                     st.write(doc.page_content)
 
-        # with st.form(key="my_form", clear_on_submit=True):
-        #     query = st.text_input(
-        #         "Query: ",
-        #         key="input",
-        #         value="",
-        #         placeholder="Type your query here...",
-        #         label_visibility="hidden",
-        #     )
-        #     submit_button = st.form_submit_button(label="Submit")
 
         prompt = st.chat_input("Query...")
-        # if prompt:
-        #     st.write(f"User has sent the following prompt: {prompt}")
 
         col1, col2 = st.columns([1, 3.2])
         reset_button = col1.button("Reset Chat History")
